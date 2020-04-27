@@ -1,5 +1,5 @@
 ```
-docker build -t registry.nextgis.com/<name>:0.1.0 .
+docker build -t registry.nextgis.com/trolleway_ubuntu:0.1.0 .
 ```
 or
 ```
