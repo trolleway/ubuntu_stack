@@ -13,6 +13,7 @@ RUN echo 'trolleway:user' | chpasswd
 RUN apt-get install gdal-bin
 RUN apt-get install sudo
 RUN adduser trolleway sudo
+RUN usermod -aG sudo trolleway
 
 
 #-p "$(openssl passwd -1 trolleway)"
