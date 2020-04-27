@@ -3,4 +3,4 @@
 4 Загрузи в регистри docker push registry.nextgis.com/<name>:0.1.0
 
 
-name=trolleway_gdal
+name=trolleway_ubuntu
