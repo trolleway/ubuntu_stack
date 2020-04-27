@@ -18,7 +18,8 @@ RUN apt-get install --no-install-recommends -y python3-numpy
 RUN apt-get install --no-install-recommends -y gdal-bin
 
 #add to sudoers
-RUN apt-get install --no-install-recommends -y sudo
+RUN apt-get install -y apt-utils
+RUN apt-get install -y sudo
 RUN adduser trolleway sudo
 RUN usermod -aG sudo trolleway
 
