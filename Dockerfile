@@ -10,6 +10,11 @@ ARG gid=1000
 RUN groupadd -g $gid trolleway && useradd --home /home/trolleway -u $uid -g $gid trolleway  \
   && mkdir -p /home/trolleway && chown -R trolleway:trolleway /home/trolleway
 RUN echo 'trolleway:user' | chpasswd
+
+#у меня в деревне такой инет, что сразу все зависимости не выкачиваются, и этот уровень завершается.
+#попробую ставить зависимости по частям, чтоб меньше качать
+RUN apt-get install --no-install-recommends -y proj-data
+RUN apt-get install --no-install-recommends -y python3-numpy
 RUN apt-get install --no-install-recommends -y gdal-bin
 
 #add to sudoers
