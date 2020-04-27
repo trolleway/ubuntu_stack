@@ -9,7 +9,7 @@ services:
       placement:
         constraints: [node.hostname == dev]
     ports:
-      - "192.168.245.1:2022:22"
+      - "192.168.245.1:2022:2022"
     volumes:
       - /home/trolleway/161:/home/user/volume
       
