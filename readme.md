@@ -1,7 +1,14 @@
-2 Сохраняй как Dockerfile
-3 Выполни docker build -t registry.nextgis.com/<name>:0.1.0 .
-4 docker push registry.nextgis.com/trolleway_ubuntu:0.1.0
+```
+docker build -t registry.nextgis.com/<name>:0.1.0 .
+```
+or
+```
+docker build -t registry.nextgis.com/<name>:0.1.0 https://github.com/trolleway/ubuntu_stack.git
+```
 
+```
+docker push registry.nextgis.com/trolleway_ubuntu:0.1.0
+```
 
 name=trolleway_ubuntu
 
