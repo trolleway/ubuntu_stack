@@ -10,5 +10,9 @@ ARG gid=1000
 RUN groupadd -g $gid trolleway && useradd --home /home/trolleway -u $uid -g $gid trolleway  \
   && mkdir -p /home/trolleway && chown -R trolleway:trolleway /home/trolleway
 RUN echo 'trolleway:user' | chpasswd
+RUN apt-get install gdal-bin
+RUN apt-get install sudo
+RUN adduser trolleway sudo
+
 
 #-p "$(openssl passwd -1 trolleway)"
