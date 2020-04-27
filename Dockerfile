@@ -9,5 +9,6 @@ ARG uid=1000
 ARG gid=1000
 RUN groupadd -g $gid trolleway && useradd --home /home/trolleway -u $uid -g $gid trolleway  \
   && mkdir -p /home/trolleway && chown -R trolleway:trolleway /home/trolleway
+RUN echo 'trolleway:user' | chpasswd
 
 #-p "$(openssl passwd -1 trolleway)"
