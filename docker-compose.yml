@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+  trolleway_gdal:
+    image: registry.nextgis.com/trolleway_ubuntu:0.1.0
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints: [node.hostname == dev]
+    ports:
+      - "192.168.245.1:2022:22"
+    volumes:
+      - /home/trolleway/161:/home/user/volume
+      
+  db:
+    image: mdillon/postgis
+    environment:
+      - POSTGRES_USER=gisuser
+      - POSTGRES_PASSWORD=user
+      - POSTGRES_DB=gis
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints: [node.hostname == dev]
+
+volumes:
+  postgres: {}  
