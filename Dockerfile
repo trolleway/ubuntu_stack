@@ -10,8 +10,10 @@ ARG gid=1000
 RUN groupadd -g $gid trolleway && useradd --home /home/trolleway -u $uid -g $gid trolleway  \
   && mkdir -p /home/trolleway && chown -R trolleway:trolleway /home/trolleway
 RUN echo 'trolleway:user' | chpasswd
-RUN apt-get install gdal-bin
-RUN apt-get install sudo
+RUN apt-get install --no-install-recommends -y gdal-bin
+
+#add to sudoers
+RUN apt-get install --no-install-recommends -y sudo
 RUN adduser trolleway sudo
 RUN usermod -aG sudo trolleway
 
