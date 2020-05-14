@@ -16,18 +16,3 @@ RUN apt-get install --yes python2 python2-pip
 RUN pip install --yes git+https://github.com/mapillary/Piexif
 RUN pip install --yes --upgrade git+https://github.com/mapillary/mapillary_tools
 
-ARG uid=1000
-ARG gid=1000
-RUN groupadd -g $gid trolleway && useradd --home /home/trolleway -u $uid -g $gid trolleway  \
-  && mkdir -p /home/trolleway && chown -R trolleway:trolleway /home/trolleway
-RUN echo 'trolleway:user' | chpasswd
-
-
-#add to sudoers
-RUN apt-get install -y apt-utils
-RUN apt-get install -y sudo
-RUN adduser trolleway sudo
-RUN usermod -aG sudo trolleway
-
-
-#-p "$(openssl passwd -1 trolleway)"
