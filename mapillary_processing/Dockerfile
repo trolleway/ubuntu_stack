@@ -1,4 +1,5 @@
 FROM ubuntu:18.04
+#mapillary tools work under python2.7, so in ubuntu higher 18 is hard to install old python 
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=DontWarn
@@ -12,7 +13,7 @@ RUN apt-get install --yes wget tree
 
 # isntall mapillary_tools
 
-RUN apt-get install --yes python2 #python-pip
+RUN apt-get install --yes python-pip
 #RUN pip install --yes git+https://github.com/mapillary/Piexif
 #RUN pip install --yes --upgrade git+https://github.com/mapillary/mapillary_tools
 
