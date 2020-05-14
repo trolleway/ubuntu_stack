@@ -8,13 +8,13 @@ ARG APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=DontWarn
 
 RUN apt-get update && apt-get install --no-install-recommends -y git 
 
-RUN apt-get install wget tree
+RUN apt-get install --yes wget tree
 
 # isntall mapillary_tools
 
-RUN apt-get install python2
-RUN pip install git+https://github.com/mapillary/Piexif
-RUN pip install --upgrade git+https://github.com/mapillary/mapillary_tools
+RUN apt-get install --yes python2
+RUN pip install --yes git+https://github.com/mapillary/Piexif
+RUN pip install --yes --upgrade git+https://github.com/mapillary/mapillary_tools
 
 ARG uid=1000
 ARG gid=1000
