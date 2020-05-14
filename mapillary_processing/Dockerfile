@@ -12,7 +12,7 @@ RUN apt-get install --yes wget tree
 
 # isntall mapillary_tools
 
-RUN apt-get install --yes python2 python2-pip
+RUN apt-get install --yes python2 python-pip
 RUN pip install --yes git+https://github.com/mapillary/Piexif
 RUN pip install --yes --upgrade git+https://github.com/mapillary/mapillary_tools
 
