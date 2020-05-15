@@ -16,5 +16,6 @@ RUN apt-get install --yes wget tree
 RUN apt-get install --yes python-pip
 RUN pip install git+https://github.com/mapillary/Piexif
 RUN pip install --upgrade git+https://github.com/mapillary/mapillary_tools
+RUN apt-get install --yes exiftool imagemagick
 
 CMD ["/bin/bash"]
