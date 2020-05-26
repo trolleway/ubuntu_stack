@@ -17,6 +17,8 @@ RUN apt-get install --no-install-recommends -y proj-data
 RUN apt-get install --no-install-recommends -y python3-numpy
 RUN apt-get install --no-install-recommends -y gdal-bin
 
+RUN apt-get install --no-install-recommends -y python3-pip
+
 #add to sudoers
 RUN apt-get install -y apt-utils
 RUN apt-get install -y sudo
