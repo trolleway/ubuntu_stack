@@ -18,6 +18,7 @@ RUN apt-get install --no-install-recommends -y python3-numpy
 RUN apt-get install --no-install-recommends -y gdal-bin
 
 RUN apt-get install --no-install-recommends -y python3-pip
+RUN apt-get install --no-install-recommends -y jq curl
 
 #add to sudoers
 RUN apt-get install -y apt-utils
