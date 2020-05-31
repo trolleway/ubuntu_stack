@@ -18,7 +18,9 @@ RUN apt-get install --no-install-recommends -y python3-numpy
 RUN apt-get install --no-install-recommends -y gdal-bin
 
 RUN apt-get install --no-install-recommends -y python3-pip
+#video
 RUN apt-get install --no-install-recommends -y jq curl
+RUN apt-get install --no-install-recommends -y ffmpeg
 
 #add to sudoers
 RUN apt-get install -y apt-utils
