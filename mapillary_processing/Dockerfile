@@ -17,8 +17,14 @@ RUN apt-get install --yes python-pip
 RUN pip install git+https://github.com/mapillary/Piexif
 RUN pip install --upgrade git+https://github.com/mapillary/mapillary_tools
 RUN apt-get install --yes exiftool 
+
 #for sjcam
 RUN apt-get install --yes imagemagick parallel 
 
+#reverse geocoding for youtube timelapse
+RUN apt-get install --no-install-recommends -y jq curl
+
+#video
+RUN apt-get install --no-install-recommends -y ffmpeg
 
 CMD ["/bin/bash"]
