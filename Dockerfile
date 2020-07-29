@@ -20,6 +20,7 @@ RUN apt-get install --no-install-recommends -y gdal-bin
 RUN apt-get install --no-install-recommends -y python3-pip
 RUN apt-get install --no-install-recommends -y python3-psycopg2
 RUN apt-get install --no-install-recommends -y time
+RUN pip3 install tqdm
 
 #add to sudoers
 RUN apt-get install -y apt-utils
