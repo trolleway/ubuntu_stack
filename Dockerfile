@@ -3,8 +3,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 ARG APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=DontWarn
 
 
-RUN apt-get update -y && \
-	apt-get -y install --no-install-recommends --yes language-pack-ru \
+RUN apt-get update -y && apt-get upgrade -y
+
+RUN 	apt-get -y install --no-install-recommends --yes language-pack-ru \
 	apt-transport-https ca-certificates curl gnupg && \
 	echo "deb https://rm.nextgis.com/api/repo/11/deb focal main" | tee -a /etc/apt/sources.list && \
 	curl -s -L https://rm.nextgis.com/api/repo/11/deb/key.gpg | apt-key add - && \
