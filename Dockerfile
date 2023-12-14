@@ -35,11 +35,5 @@ RUN echo 'trolleway:user' | chpasswd
 
 RUN apt-get install --no-install-recommends -y time curl mc ffmpeg
 
-#add to sudoers
-RUN apt-get install -y apt-utils
-RUN apt-get install -y sudo
-RUN adduser trolleway sudo
-RUN usermod -aG sudo trolleway
-
 WORKDIR /data
-#-p "$(openssl passwd -1 trolleway)"
+
