@@ -17,7 +17,7 @@ RUN 	apt-get -y install  --yes language-pack-ru software-properties-common \
 
 RUN apt-get -y install --no-install-recommends --yes language-pack-ru apt-transport-https ca-certificates curl python3 python3-pip python3-psycopg2 
 RUN pip3 install  --break-system-packages  --upgrade pip
-RUN pip3 install --upgrade ffmpeg mc dos2unix git
+RUN apt-get -y install ffmpeg mc dos2unix git
 
 
 ENV LANG ru_RU.UTF-8
