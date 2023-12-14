@@ -25,12 +25,6 @@ ENV LANGUAGE ru_RU:ru
 ENV LC_ALL ru_RU.UTF-8
 
 
-RUN apt-get install --no-install-recommends -y mc git nano wget tree
-ARG uid=1000
-ARG gid=1000
-RUN groupadd -g $gid trolleway && useradd --home /home/trolleway -u $uid -g $gid trolleway  \
-  && mkdir -p /home/trolleway && chown -R trolleway:trolleway /home/trolleway
-RUN echo 'trolleway:user' | chpasswd
 
 
 RUN apt-get install --no-install-recommends -y time curl mc ffmpeg
